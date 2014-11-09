@@ -33,6 +33,9 @@ class WP_Hydra {
 		// replace occurences in content
 		add_filter('the_content', array($this, 'setup_content'));
 
+		// replace occurences in widget text
+		add_filter('widget_text', array($this, 'setup_content'));
+
 		// allow developers to support URLs with multiple domains in their content
 		add_filter('wp_hydra_content', array($this, 'setup_content'));
 	}
