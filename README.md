@@ -5,6 +5,10 @@ Allows one WordPress installation to be resolved and browsed at multiple domains
 
 -----
 
+#### Purpose
+
+WP Hydra has a quite straightforward purpose. Say you have a WordPress site, hosted on example.com. You've also purchased example.net and example.org, and you want them to also use the same website (the same installation), but to persist with that particular domain to have a consistent user experience. WP Hydra can help you with this.
+
 #### Abstract
 
 Pointing multiple URLs to the same website is a good way to direct traffic to your site from several different domain names. You can accomplish this in two ways: either redirect one of the URLs to your primary domain, or park the domains, which point these domains towards your primary domain.
