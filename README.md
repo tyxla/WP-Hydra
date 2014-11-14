@@ -23,4 +23,6 @@ Once your multiple domains point to the same website, you have to activate the p
 
 #### Installation
 
-Simply install and activate the plugin - no additional configuration is needed. 
+You only need to make sure that your multiple domains point to the same hosting, and to the same physical location on your hosting account.
+
+Once this is done, simply install and activate the plugin - no additional configuration is needed. 
