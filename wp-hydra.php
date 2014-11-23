@@ -3,6 +3,8 @@
  * Plugin Name: WP Hydra
  * Description: Allows one WordPress installation to be resolved and browsed at multiple domains.
  * Version: 1.0
+ * Author: tyxla
+ * Author URI: https://github.com/tyxla
  * License: GPL2
  */
 
