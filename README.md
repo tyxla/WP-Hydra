@@ -26,3 +26,17 @@ Once your multiple domains point to the same website, you have to activate the p
 You only need to make sure that your multiple domains point to the same hosting, and to the same physical location on your hosting account.
 
 Once this is done, simply install and activate the plugin - no additional configuration is needed. 
+
+-----
+
+#### Further customization - filters
+
+If you have some custom content and you want the URLs within it to support multiple domains, you can use the `wp_hydra_content` filter, like this:
+
+	// we assume that you have some content in $content
+    $content = apply_filters('wp_hydra_content', $content);
+
+If you have some custom URLs somewhere and you want them multiple domains, you can use the `wp_hydra_domain` filter, like this:
+
+	// we assume that you have some content in $content
+    $url = apply_filters('wp_hydra_domain', $url);
