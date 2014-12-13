@@ -40,3 +40,9 @@ If you have some custom URLs somewhere and you want them multiple domains, you c
 
 	// we assume that you have some content in $content
     $url = apply_filters('wp_hydra_domain', $url);
+
+-----
+
+#### Further customization for developers
+
+Since the `$wp_hydra` object is global, you can easily unhook any of the default functionality by simply calling `remove_action()` or `remove_filter` on it.
