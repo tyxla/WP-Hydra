@@ -45,4 +45,12 @@ If you have some custom URLs somewhere and you want them multiple domains, you c
 
 #### Further customization for developers
 
-Since the `$wp_hydra` object is global, you can easily unhook any of the default functionality by simply calling `remove_action()` or `remove_filter` on it.
+Since the `$wp_hydra` object is global, you can easily unhook any of the default functionality by simply calling `remove_action()` or `remove_filter` on it. The follwoing example will remove the WP Hydra behavior on the content, but only for the archive pages:
+
+	add_action('wp_loaded', 'some_example_here');
+	function some_example_here() {
+		global $wp_hydra;
+		if( is_archive() ) {
+			remove_filter('the_content', array($wp_hydra, 'setup_content'));
+		}
+	}
