@@ -31,6 +31,7 @@ class WP_Hydra {
 		add_filter('stylesheet_uri', array($this, 'setup_domain'), 1);
 		add_filter('stylesheet_directory_uri', array($this, 'setup_domain'), 1);
 		add_filter('template_directory_uri', array($this, 'setup_domain'), 1);
+		add_filter('plugins_url', array($this, 'setup_domain'), 1);
 
 		// replace occurences in content
 		add_filter('the_content', array($this, 'setup_content'));
