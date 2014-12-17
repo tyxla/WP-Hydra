@@ -123,7 +123,7 @@ class WP_Hydra {
 
 		// fix all targeted array elements
 		foreach ($keys_to_update as $key) {
-			$upload_dir[$prop] = apply_filters('wp_hydra_domain', $upload_dir[$prop]);
+			$upload_dir[$key] = apply_filters('wp_hydra_domain', $upload_dir[$key]);
 		}
 
 		return $upload_dir;
