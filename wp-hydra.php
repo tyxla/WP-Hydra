@@ -38,6 +38,9 @@ class WP_Hydra {
 		// replace occurences in widget text
 		add_filter('widget_text', array($this, 'setup_content'));
 
+		// replace occurences in wp_upload_dir();
+		add_filter('upload_dir', array($this, 'setup_upload_dir'));
+
 		// allow developers to support multiple domains in fields that contain only a site URL
 		add_filter('wp_hydra_domain', array($this, 'setup_domain'));
 
@@ -101,6 +104,29 @@ class WP_Hydra {
 		$content = str_replace($original_home, $current_home, $content);
 
 		return $content;	
+	}
+
+	/**	
+	 * Replaces original domain with current domain in wp_upload_dir().
+	 *
+	 * @access public
+	 *
+	 * @param array $upload_dir The current upload dir settings with the original domain.
+	 * @return array $upload_dir The upload dir settings with the new domain.
+	 */
+	public function setup_upload_dir($upload_dir) {
+		// keys of array element that we'll be updating
+		$keys_to_update = array(
+			'url',
+			'baseurl',
+		);
+
+		// fix all targeted array elements
+		foreach ($keys_to_update as $key) {
+			$upload_dir[$prop] = apply_filters('wp_hydra_domain', $upload_dir[$prop]);
+		}
+
+		return $upload_dir;
 	}
 
 }
