@@ -62,5 +62,8 @@ function some_example_here() {
 
 == Changelog ==
 
+= 1.0.1 =
+Support both http and https together.
+
 = 1.0 =
 Initial version.
