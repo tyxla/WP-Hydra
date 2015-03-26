@@ -79,12 +79,17 @@ class WP_Hydra {
 		}
 
 		// prepare original domain and current domain with the current protocol
-		$protocol = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://';
-		$original_base = $protocol . $original_domain;
-		$new_base = $protocol . $current_domain;
+		$protocols = array('http://', 'https://');
+		$current_protocol = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://';
+		foreach ($protocols as $protocol) {
+			$original_base = $protocol . $original_domain;
+			$new_base = $current_protocol . $current_domain;
 
-		// replace original domain with current domain
-		return str_replace($original_base, $new_base, $url);
+			// replace original domain with current domain
+			$url = str_replace($original_base, $new_base, $url);
+		}
+
+		return $url;
 	}
 
 	/**	
