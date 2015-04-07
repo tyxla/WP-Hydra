@@ -3,7 +3,7 @@
  * Plugin Name: WP Hydra
  * Plugin URI: https://wordpress.org/plugins/wp-hydra/
  * Description: Allows one WordPress installation to be resolved and browsed at multiple domains.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: tyxla
  * Author URI: https://github.com/tyxla
  * License: GPL2
@@ -80,7 +80,7 @@ class WP_Hydra {
 
 		// prepare original domain and current domain with the current protocol
 		$protocols = array('http://', 'https://');
-		$current_protocol = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://';
+		$current_protocol = (is_ssl() ? 'https' : 'http') . '://';
 		foreach ($protocols as $protocol) {
 			$original_base = $protocol . $original_domain;
 			$new_base = $current_protocol . $current_domain;

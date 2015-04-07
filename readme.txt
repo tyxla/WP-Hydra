@@ -3,7 +3,7 @@ Contributors: tyxla
 Tags: wp, hydra, multiple, domains, installation, resolved
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ function some_example_here() {
 `
 
 == Changelog ==
+
+= 1.0.2 =
+Fixing IIS compatibility issues.
 
 = 1.0.1 =
 Support both http and https together.
