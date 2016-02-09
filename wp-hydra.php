@@ -72,7 +72,7 @@ class WP_Hydra {
 
 		// get original and current domain
 		$original_domain = $original_domain_parts['host'];
-		$current_domain = $_SERVER['HTTP_HOST'];
+		$current_domain = sanitize_text_field( $_SERVER['HTTP_HOST'] ); // input var ok.
 
 		// if original and current domain match, skip
 		if ( $original_domain == $current_domain ) {
