@@ -37,14 +37,10 @@ class WP_Hydra {
 		add_filter( 'template_directory_uri', array( $this, 'setup_domain' ), 1 );
 		add_filter( 'plugins_url', array( $this, 'setup_domain' ), 1 );
 
-		// replace occurences in content
-		add_filter( 'the_content', array( $this, 'setup_content' ) );
-
-		// replace occurences in widget text
-		add_filter( 'widget_text', array( $this, 'setup_content' ) );
-
-		// replace occurences in wp_upload_dir();
-		add_filter( 'upload_dir', array( $this, 'setup_upload_dir' ) );
+		// replace various occurences
+		add_filter( 'the_content', array( $this, 'setup_content' ) ); // content
+		add_filter( 'widget_text', array( $this, 'setup_content' ) ); // widget text
+		add_filter( 'upload_dir', array( $this, 'setup_upload_dir' ) ); // wp_upload_dir();
 
 		// allow developers to support multiple domains in fields that contain only a site URL
 		add_filter( 'wp_hydra_domain', array( $this, 'setup_domain' ) );
