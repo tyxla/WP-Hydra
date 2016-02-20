@@ -75,12 +75,27 @@ class WP_Hydra {
 			return $url;
 		}
 
+		return $this->replace_domain( $url, $original_domain, $current_domain );
+	}
+
+	/**
+	 * Replace the old domain with a new domain in a specific URL.
+	 * 
+	 * @access protected
+	 *
+	 * @param string $url The current URL.
+	 * @param string $old_domain The old domain.
+	 * @param string $new_domain The new domain.
+	 * @return string $url The new URL.
+	 */
+	protected function replace_domain( $url, $old_domain, $new_domain ) {
 		// prepare original domain and current domain with the current protocol
 		$protocols = array( 'http://', 'https://' );
 		$current_protocol = ( is_ssl() ? 'https' : 'http' ) . '://';
+
 		foreach ( $protocols as $protocol ) {
-			$original_base = $protocol . $original_domain;
-			$new_base = $current_protocol . $current_domain;
+			$original_base = $protocol . $old_domain;
+			$new_base = $current_protocol . $new_domain;
 
 			// replace original domain with current domain
 			$url = str_replace( $original_base, $new_base, $url );
