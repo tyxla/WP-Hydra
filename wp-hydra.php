@@ -12,6 +12,11 @@
  * Tested up to: 4.4.2
  */
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Main WP_Hydra class.
  *
