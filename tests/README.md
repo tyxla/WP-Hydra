@@ -10,6 +10,8 @@
 
     $ tests/bin/install.sh <db-name> <db-user> <db-password> [db-host]
 
+**Important**: Make sure that you run this command from the **root** of the plugin.
+
 Sample usage:
 
     $ tests/bin/install.sh wp_hydra_tests root root
