@@ -8,7 +8,9 @@
     "authors": [
         {
             "name": "Marin Atanasov",
-            "email": "contact@marinatanasov.com"
+            "email": "contact@marinatanasov.com",
+            "homepage": "http://marinatanasov.com/",
+            "role": "Developer"
         }
     ],
     "require": {},
