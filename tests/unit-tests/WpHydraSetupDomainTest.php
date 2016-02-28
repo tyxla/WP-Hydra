@@ -25,18 +25,24 @@ class WpHydraSetupDomainTest extends WP_UnitTestCase {
 	 * @covers WP_Hydra::setup_domain
 	 */
 	public function testWithTheSameDomain() {
+		$original_host = $_SERVER['HTTP_HOST'];
+
 		$_SERVER['HTTP_HOST'] = 'example.com';
 		$url = 'http://example.com/lorem-ipsum/';
 
 		$result = $this->wp_hydra->setup_domain( $url );
 
 		$this->assertSame( $url, $result );
+
+		$_SERVER['HTTP_HOST'] = $original_host;
 	}
 
 	/**
 	 * @covers WP_Hydra::setup_domain
 	 */
 	public function testWithDifferentDomain() {
+		$original_host = $_SERVER['HTTP_HOST'];
+
 		$current_domain = $_SERVER['HTTP_HOST'] = 'foobar.com';
 		$original_domain = 'example.com';
 		$url = 'http://example.com/lorem-ipsum/';
@@ -46,6 +52,8 @@ class WpHydraSetupDomainTest extends WP_UnitTestCase {
 		$actual = $this->wp_hydra->setup_domain( $url );
 
 		$this->assertSame( $expected, $actual );
+
+		$_SERVER['HTTP_HOST'] = $original_host;
 	}
 
 }
