@@ -96,7 +96,7 @@ class WP_Hydra {
 	protected function replace_domain( $url, $old_domain, $new_domain ) {
 		// prepare original domain and current domain with the current protocol
 		$protocols = array( 'http://', 'https://' );
-		$current_protocol = ( is_ssl() ? 'https' : 'http' ) . '://';
+		$current_protocol = ( $this->is_ssl() ? 'https' : 'http' ) . '://';
 
 		foreach ( $protocols as $protocol ) {
 			$original_base = $protocol . $old_domain;
@@ -153,6 +153,17 @@ class WP_Hydra {
 		}
 
 		return $upload_dir;
+	}
+
+	/**
+	 * Determine if SSL is used.
+	 *
+	 * @access public
+	 *
+	 * @return bool True if SSL, false if not used.
+	 */
+	public function is_ssl() {
+		return is_ssl();
 	}
 
 }
