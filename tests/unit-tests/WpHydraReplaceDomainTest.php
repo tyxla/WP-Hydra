@@ -120,7 +120,6 @@ class WpHydraReplaceDomainTest extends WP_UnitTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
-
 }
 
 class WP_Hydra_Exposed_RD extends WP_Hydra {
