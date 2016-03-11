@@ -9,7 +9,7 @@
  * Plugin URI: https://github.com/tyxla/WP-Hydra
  * License: GPL2
  * Requires at least: 3.0.1
- * Tested up to: 4.4.2
+ * Tested up to: 4.5
  */
 
 // Exit if accessed directly
