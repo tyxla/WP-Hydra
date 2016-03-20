@@ -53,4 +53,16 @@ class WpHydraSetupContentTest extends WP_UnitTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
+	/**
+	 * @covers WP_Hydra::setup_content
+	 */
+	public function testMultipleOccurences() {
+		$content = 'http://example.org/ helloWorld http://example.org/ foo bar http://example.org/';
+		
+		$expected = $this->domain . '/ helloWorld ' . $this->domain . '/ foo bar ' . $this->domain . '/';
+		$actual = $this->wp_hydra->setup_content( $content );
+
+		$this->assertSame( $expected, $actual );
+	}
+
 }
