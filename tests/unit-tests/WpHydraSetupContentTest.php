@@ -17,4 +17,40 @@ class WpHydraSetupContentTest extends WP_UnitTestCase {
 		unset( $this->domain );
 	}
 
+	/**
+	 * @covers WP_Hydra::setup_content
+	 */
+	public function testOccurencesInTheBeginning() {
+		$content = 'http://example.org/ foo bar ';
+		
+		$expected = $this->domain . '/ foo bar ';
+		$actual = $this->wp_hydra->setup_content( $content );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers WP_Hydra::setup_content
+	 */
+	public function testOccurencesInTheMiddle() {
+		$content = 'helloWorld http://example.org/ foo bar ';
+		
+		$expected = 'helloWorld ' . $this->domain . '/ foo bar ';
+		$actual = $this->wp_hydra->setup_content( $content );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers WP_Hydra::setup_content
+	 */
+	public function testOccurencesInTheEnd() {
+		$content = 'helloWorld http://example.org/';
+		
+		$expected = 'helloWorld ' . $this->domain . '/';
+		$actual = $this->wp_hydra->setup_content( $content );
+
+		$this->assertSame( $expected, $actual );
+	}
+
 }
