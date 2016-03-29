@@ -24,6 +24,22 @@ class WpHydraSetupDomainTest extends WP_UnitTestCase {
 	/**
 	 * @covers WP_Hydra::setup_domain
 	 */
+	public function testWithNoHost() {
+		$original_host = $_SERVER['HTTP_HOST'];
+		unset($_SERVER['HTTP_HOST']);
+
+		$url = 'http://example.xyz/lorem-ipsum/';
+
+		$result = $this->wp_hydra->setup_domain( $url );
+
+		$this->assertSame( $url, $result );
+
+		$_SERVER['HTTP_HOST'] = $original_host;
+	}
+
+	/**
+	 * @covers WP_Hydra::setup_domain
+	 */
 	public function testWithTheSameDomain() {
 		$original_host = $_SERVER['HTTP_HOST'];
 
