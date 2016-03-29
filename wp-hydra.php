@@ -67,7 +67,7 @@ class WP_Hydra {
 		$original_domain_parts = parse_url( $url );
 
 		// if unable to retrieve the host, skip
-		if ( empty( $original_domain_parts['host'] ) ) {
+		if ( empty( $original_domain_parts['host'] ) || ! isset( $_SERVER['HTTP_HOST'] ) ) {
 			return $url;
 		}
 
