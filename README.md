@@ -34,12 +34,12 @@ Once this is done, simply install and activate the plugin - no additional config
 If you have some custom content and you want the URLs within it to support multiple domains, you can use the `wp_hydra_content` filter, like this:
 
 	// we assume that you have some content in $content
-    $content = apply_filters('wp_hydra_content', $content);
+    $content = apply_filters( 'wp_hydra_content', $content );
 
 If you have some custom URLs somewhere and you want them multiple domains, you can use the `wp_hydra_domain` filter, like this:
 
 	// we assume that you have some content in $content
-    $url = apply_filters('wp_hydra_domain', $url);
+    $url = apply_filters( 'wp_hydra_domain', $url );
 
 -----
 
@@ -47,10 +47,10 @@ If you have some custom URLs somewhere and you want them multiple domains, you c
 
 Since the `$wp_hydra` object is global, you can easily unhook any of the default functionality by simply calling `remove_action()` or `remove_filter` on it. The following example will remove the WP Hydra behavior of the content, but only for `the_content()` calls on the archive page:
 
-	add_action('wp_loaded', 'some_example_here');
+	add_action( 'wp_loaded', 'some_example_here' );
 	function some_example_here() {
 		global $wp_hydra;
 		if( is_archive() ) {
-			remove_filter('the_content', array($wp_hydra, 'setup_content'));
+			remove_filter( 'the_content', array( $wp_hydra, 'setup_content' ) );
 		}
 	}
