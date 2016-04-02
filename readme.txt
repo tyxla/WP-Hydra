@@ -3,7 +3,7 @@ Contributors: tyxla
 Tags: wp, hydra, multiple, domains, installation, resolved
 Requires at least: 3.0.1
 Tested up to: 4.5
-Stable tag: 1.0.4
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,17 +62,26 @@ function some_example_here() {
 
 == Changelog ==
 
+= 1.1 =
+* Tested with WordPress 4.5.
+* Implemented Scrutinizer CI
+* Made plugin compatible with WordPress Coding Standards
+* Added composer.json
+* Various code improvements
+* Implemented a unit test suite and a complete set of tests
+* Implemented Travis CI
+
 = 1.0.4 =
-Tested with WordPress 4.4.
+* Tested with WordPress 4.4.
 
 = 1.0.3 =
-Tested with WordPress 4.3.
+* Tested with WordPress 4.3.
 
 = 1.0.2 =
-Fixing IIS compatibility issues.
+* Fixing IIS compatibility issues.
 
 = 1.0.1 =
-Support both http and https together.
+* Support both http and https together.
 
 = 1.0 =
-Initial version.
+* Initial version.
