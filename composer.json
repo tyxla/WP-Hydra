@@ -16,5 +16,9 @@
     "require": {},
     "autoload": {
         "files": ["wp-hydra.php"]
+    },
+    "support": {
+        "source": "https://github.com/tyxla/WP-Hydra",
+        "issues": "https://github.com/tyxla/WP-Hydra/issues"
     }
 }
