@@ -21,3 +21,9 @@ Thumbs.db
 # Unit tests
 /tmp
 /tests/bin/tmp
+
+# Composer
+/vendor
+
+# Vagrant
+.vagrant
