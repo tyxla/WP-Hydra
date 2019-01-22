@@ -1,6 +1,11 @@
 <?php
 
 class WpHydraGlobalVarTest extends WP_UnitTestCase {
+	public function setUp() {
+		self::$ignore_files = true;
+
+		parent::setUp();
+	}
 
 	public function testGlobalVarDefined() {
 		global $wp_hydra;
@@ -8,5 +13,4 @@ class WpHydraGlobalVarTest extends WP_UnitTestCase {
 		$this->assertNotEmpty($wp_hydra);
 		$this->assertInstanceOf('WP_Hydra', $wp_hydra);
 	}
-
 }

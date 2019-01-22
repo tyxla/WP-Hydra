@@ -3,7 +3,7 @@
 class WpHydraReplaceDomainTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->wp_hydra = $this->getMock('WP_Hydra_Exposed_RD', array('is_ssl'));
+		$this->wp_hydra = $this->getMockBuilder('WP_Hydra_Exposed_RD')->setMethods(array('is_ssl'))->getMock();
 	}
 
 	public function tearDown() {

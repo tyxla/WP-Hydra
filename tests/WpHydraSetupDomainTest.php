@@ -3,7 +3,7 @@
 class WpHydraSetupDomainTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->wp_hydra = $this->getMock('WP_Hydra', null);
+		$this->wp_hydra = $this->getMockBuilder('WP_Hydra')->setMethods(null)->getMock();
 	}
 
 	public function tearDown() {
@@ -62,7 +62,7 @@ class WpHydraSetupDomainTest extends WP_UnitTestCase {
 		$current_domain = $_SERVER['HTTP_HOST'] = 'foobar.com';
 		$original_domain = 'example.com';
 		$url = 'http://example.com/lorem-ipsum/';
-		$exposed_instance = $this->getMock('WP_Hydra_Exposed', null);
+		$exposed_instance = $this->getMockBuilder('WP_Hydra_Exposed')->setMethods(null)->getMock();
 
 		$expected = $exposed_instance->replace_domain_exposed( $url, $original_domain, $current_domain );
 		$actual = $this->wp_hydra->setup_domain( $url );

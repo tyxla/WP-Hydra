@@ -3,7 +3,7 @@
 class WpHydraConstructTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->wp_hydra = $this->getMock('WP_Hydra');
+		$this->wp_hydra = $this->getMockBuilder('WP_Hydra')->getMock();
 	}
 
 	public function tearDown() {

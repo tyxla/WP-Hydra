@@ -3,7 +3,7 @@
 class WpHydraSetupUploadDirTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->wp_hydra = $this->getMock('WP_Hydra', null, array(), '', false);
+		$this->wp_hydra = $this->getMockBuilder('WP_Hydra')->disableOriginalConstructor()->setMethods(null)->getMock();
 
 		add_filter( 'wp_hydra_domain', array( $this, 'wp_hydra_domain' ) );
 	}

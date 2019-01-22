@@ -3,7 +3,7 @@
 class WpHydraIsSslTest extends WP_UnitTestCase {
 
 	public function setUp() {
-		$this->wp_hydra = $this->getMock('WP_Hydra', null);
+		$this->wp_hydra = $this->getMockBuilder('WP_Hydra')->setMethods(null)->getMock();
 	}
 
 	public function tearDown() {
