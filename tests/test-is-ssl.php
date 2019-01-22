@@ -1,16 +1,31 @@
 <?php
+/**
+ * Contains tests for WP_Hydra::is_ssl()
+ *
+ * @package wp-hydra
+ */
 
+/**
+ * Tests for WP_Hydra::is_ssl()
+ */
 class WpHydraIsSslTest extends WP_UnitTestCase {
-
+	/**
+	 * Test setup
+	 */
 	public function setUp() {
-		$this->wp_hydra = $this->getMockBuilder('WP_Hydra')->setMethods(null)->getMock();
+		$this->wp_hydra = $this->getMockBuilder( 'WP_Hydra' )->setMethods( null )->getMock();
 	}
 
+	/**
+	 * Test teardown
+	 */
 	public function tearDown() {
 		unset( $this->wp_hydra );
 	}
 
 	/**
+	 * Test when SSL is disabled.
+	 *
 	 * @covers WP_Hydra::is_ssl
 	 */
 	public function testWithSslDisabled() {
@@ -22,6 +37,8 @@ class WpHydraIsSslTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test when SSL is enabled.
+	 *
 	 * @covers WP_Hydra::is_ssl
 	 */
 	public function testWithSslEnabled() {

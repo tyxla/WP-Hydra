@@ -1,16 +1,32 @@
 <?php
+/**
+ * Contains tests for WP_Hydra::_construct()
+ *
+ * @package wp-hydra
+ */
 
+/**
+ * Tests for WP_Hydra::_construct()
+ */
 class WpHydraConstructTest extends WP_UnitTestCase {
 
+	/**
+	 * Test setup.
+	 */
 	public function setUp() {
-		$this->wp_hydra = $this->getMockBuilder('WP_Hydra')->getMock();
+		$this->wp_hydra = $this->getMockBuilder( 'WP_Hydra' )->getMock();
 	}
 
+	/**
+	 * Test teardown.
+	 */
 	public function tearDown() {
 		unset( $this->wp_hydra );
 	}
 
 	/**
+	 * Tests whether filters are properly registered.
+	 *
 	 * @covers WP_Hydra::__construct
 	 */
 	public function testHooksRegistered() {
