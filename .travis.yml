@@ -31,13 +31,8 @@ matrix:
       dist: precise
 
 before_script:
+  - echo 'xdebug.coverage_enable=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - |
-    if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
-      phpenv config-rm xdebug.ini
-    else
-      echo "xdebug.ini does not exist"
-    fi
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
       bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
@@ -52,7 +47,7 @@ before_script:
 script:
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
-      phpunit
+      phpunit --coverage-clover=coverage.xml
       WP_MULTISITE=1 phpunit
     fi
   - |
@@ -60,6 +55,8 @@ script:
       phpcs
     fi
 
-after_script:
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
   - wget https://scrutinizer-ci.com/ocular.phar
   - php ocular.phar code-coverage:upload --format=php-clover ./tmp/clover.xml
+  

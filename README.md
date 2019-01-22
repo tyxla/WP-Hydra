@@ -1,4 +1,4 @@
-WP Hydra [![Build Status](https://travis-ci.org/tyxla/WP-Hydra.svg?branch=master)](https://travis-ci.org/tyxla/WP-Hydra) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tyxla/WP-Hydra/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tyxla/WP-Hydra/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/tyxla/WP-Hydra/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/tyxla/WP-Hydra/?branch=master)
+WP Hydra [![Build Status](https://travis-ci.org/tyxla/WP-Hydra.svg?branch=master)](https://travis-ci.org/tyxla/WP-Hydra) [![codecov](https://codecov.io/gh/tyxla/WP-Hydra/branch/master/graph/badge.svg)](https://codecov.io/gh/tyxla/WP-Hydra) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tyxla/WP-Hydra/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tyxla/WP-Hydra/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/tyxla/WP-Hydra/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/tyxla/WP-Hydra/?branch=master)
 ========
 
 Allows one WordPress installation to be resolved and browsed at multiple domains.
