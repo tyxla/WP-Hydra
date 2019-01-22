@@ -54,3 +54,11 @@ Since the `$wp_hydra` object is global, you can easily unhook any of the default
 			remove_filter( 'the_content', array( $wp_hydra, 'setup_content' ) );
 		}
 	}
+
+-----
+
+#### Testing
+
+The plugin is fully covered by unit tests.
+
+For more information on how to install and run them, refer to the [WP Hydra Unit Tests README](https://github.com/tyxla/WP-Hydra/blob/master/tests/README.md).
