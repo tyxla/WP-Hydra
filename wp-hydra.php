@@ -7,8 +7,8 @@
  * Author: tyxla
  * Author URI: http://marinatanasov.com/
  * License: GPL2
- * Requires at least: 3.0.1
- * Tested up to: 4.5
+ * Requires at least: 4.0
+ * Tested up to: 5.1
  */
 
 // Exit if accessed directly
